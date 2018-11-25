@@ -13,3 +13,12 @@ services:
     depends_on:
       - db
     command: python manage.py runserver 0.0.0.0:8000
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.node
+    volumes:
+      - .:/code
+    command: yarn watch
+
