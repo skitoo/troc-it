@@ -3,6 +3,9 @@ const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   mode: 'development',
+  resolve: {
+    extensions: ['.js', '.vue'],
+  },
   entry: path.resolve(__dirname, '../trocit/front/index.js'),
   output: {
     path: path.resolve(__dirname, '../trocit/static/js'),

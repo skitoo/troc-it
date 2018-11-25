@@ -1,5 +1,5 @@
 import { mount, createLocalVue } from '@vue/test-utils';
-import App from './App.vue';
+import App from './App';
 
 describe('App component', () => {
   it('should have .red class', () => {

@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     node: true,
@@ -14,6 +15,13 @@ module.exports = {
     "airbnb-base",
     'plugin:vue/recommended',
   ],
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: 'config/webpack.config.dev.js'
+      }
+    }
+  },
   plugins: [
     'vue'
   ],
