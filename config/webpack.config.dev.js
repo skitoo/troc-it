@@ -1,7 +1,5 @@
-'use strict';
-
 const path = require('path');
-const { VueLoaderPlugin } = require('vue-loader')
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   mode: 'development',
@@ -20,16 +18,21 @@ module.exports = {
         test: /\.css$/,
         use: [
           'vue-style-loader',
-          'css-loader'
-        ]
+          'css-loader',
+        ],
       },
       {
         test: /\.js$/,
-        use: 'babel-loader'
-      }
+        use: 'babel-loader',
+      },
+      {
+        test: /\.(js|vue)$/,
+        use: 'eslint-loader',
+        enforce: 'pre',
+      },
     ],
   },
   plugins: [
-    new VueLoaderPlugin()
-  ]
+    new VueLoaderPlugin(),
+  ],
 };
