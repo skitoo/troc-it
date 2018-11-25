@@ -17,3 +17,28 @@ matrix:
 
       script:
       - yarn test
+    - language: python
+      python:
+        - "3.6"
+        - "3.7"
+
+      services:
+        - postgresql
+
+      env:
+        - DB_NAME=travisci
+        - DB_USER=postgres
+        - DB_HOST=localhost
+        - DB_PORT=5432
+
+      before_install:
+        - pip install pipenv --upgrade
+
+      cache:
+        pipenv: true
+
+      install:
+        - pipenv install --dev --skip-lock
+
+      script:
+        - pipenv run python manage.py test
