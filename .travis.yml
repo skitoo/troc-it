@@ -1,0 +1,44 @@
+matrix:
+  include:
+    - language: node_js
+      node_js: 10
+
+      sudo: false
+
+      before_install:
+        - curl -o- -L https://yarnpkg.com/install.sh | bash
+        - export PATH="$HOME/.yarn/bin:$PATH"
+
+      cache:
+        yarn: true
+        directories:
+          - '.eslintcache'
+          - 'node_modules'
+
+      script:
+      - yarn test
+    - language: python
+      python:
+        - "3.6"
+        - "3.7"
+
+      services:
+        - postgresql
+
+      env:
+        - DB_NAME=travisci
+        - DB_USER=postgres
+        - DB_HOST=localhost
+        - DB_PORT=5432
+
+      before_install:
+        - pip install pipenv --upgrade
+
+      cache:
+        pipenv: true
+
+      install:
+        - pipenv install --dev --skip-lock
+
+      script:
+        - pipenv run python manage.py test

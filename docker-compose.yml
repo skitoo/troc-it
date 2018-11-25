@@ -13,6 +13,11 @@ services:
     depends_on:
       - db
     command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      - DB_NAME=postgres
+      - DB_USER=postgres
+      - DB_HOST=db
+      - DB_PORT=5432
 
   frontend:
     build:
