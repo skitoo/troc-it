@@ -22,6 +22,10 @@ module.exports = {
           'vue-style-loader',
           'css-loader'
         ]
+      },
+      {
+        test: /\.js$/,
+        use: 'babel-loader'
       }
     ],
   },
