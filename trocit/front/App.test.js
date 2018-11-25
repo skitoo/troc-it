@@ -1,10 +1,11 @@
 import { mount, createLocalVue } from '@vue/test-utils';
 import App from './App';
+import Navbar from './components/Navbar';
 
 describe('App component', () => {
-  it('should have .red class', () => {
+  it('should contains Navbar component', () => {
     const vue = createLocalVue();
-    const app = mount(App, { vue });
-    expect(app.classes()).toContain('red');
+    const wrapper = mount(App, { vue });
+    expect(wrapper.contains(Navbar)).toBeTruthy();
   });
 });
