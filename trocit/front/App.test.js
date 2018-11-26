@@ -3,9 +3,14 @@ import App from './App';
 import Navbar from './components/Navbar';
 
 describe('App component', () => {
+  const vue = createLocalVue();
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = mount(App, { vue });
+  });
+
   it('should contains Navbar component', () => {
-    const vue = createLocalVue();
-    const wrapper = mount(App, { vue });
     expect(wrapper.contains(Navbar)).toBeTruthy();
   });
 });

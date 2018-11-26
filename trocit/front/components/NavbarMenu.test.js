@@ -3,10 +3,13 @@ import NavbarMenu from './NavbarMenu';
 
 
 describe('components::NavbarMenu', () => {
-  it('should render NavbarMenu', () => {
-    const vue = createLocalVue();
-    const wrapper = mount(NavbarMenu, { vue });
+  let wrapper;
 
+  beforeEach(() => {
+    wrapper = mount(NavbarMenu);
+  });
+
+  it('should render NavbarMenu', () => {
     expect(wrapper.classes()).toContain('navbar-menu');
 
     const end = wrapper.find('div.navbar-end');
