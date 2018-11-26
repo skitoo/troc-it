@@ -5,11 +5,10 @@ import NavbarMenu from './NavbarMenu';
 
 
 describe('components::Navbar', () => {
-  const vue = createLocalVue();
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(Navbar, { vue });
+    wrapper = mount(Navbar);
   });
 
   it('should render Navbar', () => {

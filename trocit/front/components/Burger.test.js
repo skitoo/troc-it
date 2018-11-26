@@ -3,11 +3,10 @@ import Burger from './Burger';
 
 
 describe('components::Burger', () => {
-  const vue = createLocalVue();
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(Burger, { vue });
+    wrapper = mount(Burger);
   });
 
   it('should render burger', () => {
