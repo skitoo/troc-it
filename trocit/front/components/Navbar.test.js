@@ -1,4 +1,4 @@
-import { mount, createLocalVue } from '@vue/test-utils';
+import { mount } from '@vue/test-utils';
 import Navbar from './Navbar';
 import Burger from './Burger';
 import NavbarMenu from './NavbarMenu';
