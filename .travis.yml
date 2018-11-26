@@ -17,6 +17,7 @@ matrix:
 
       script:
       - yarn test
+      - yarn lint
     - language: python
       python:
         - "3.6"
