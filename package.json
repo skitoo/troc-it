@@ -17,7 +17,9 @@
     "collectCoverage": true,
     "collectCoverageFrom": [
       "trocit/front/**/*.{js,vue}",
-      "!trocit/front/index.js"
+      "!trocit/front/index.js",
+      "!trocit/front/tests/setup.js",
+      "!trocit/front/locales/**/*"
     ],
     "moduleFileExtensions": [
       "js",
@@ -32,6 +34,9 @@
     },
     "snapshotSerializers": [
       "<rootDir>/node_modules/jest-serializer-vue"
+    ],
+    "setupFiles": [
+      "<rootDir>/trocit/front/tests/setup.js"
     ]
   },
   "dependencies": {
