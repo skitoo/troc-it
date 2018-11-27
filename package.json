@@ -16,7 +16,8 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/**/*.{js,vue}"
+      "trocit/front/**/*.{js,vue}",
+      "!trocit/front/index.js"
     ],
     "moduleFileExtensions": [
       "js",
