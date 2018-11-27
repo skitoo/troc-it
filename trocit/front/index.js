@@ -5,9 +5,12 @@ import messages from './locales';
 
 Vue.use(VueI18n);
 
+const config = JSON.parse(document.getElementById('config').textContent);
+
 
 const i18n = new VueI18n({
-  locale: 'fr',
+  locale: config.language,
+  fallbackLocale: 'en',
   messages,
 });
 
