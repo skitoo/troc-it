@@ -43,3 +43,4 @@ matrix:
 
       script:
         - pipenv run python manage.py test
+        - pipenv run flake8
