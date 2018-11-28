@@ -4,10 +4,10 @@
       <div class="navbar-item">
         <div class="buttons">
           <a class="button is-primary">
-            <strong>Sign up</strong>
+            <strong>{{ $t('Sign up') }}</strong>
           </a>
           <a class="button is-light">
-            Log in
+            {{ $t('Log in') }}
           </a>
         </div>
       </div>
