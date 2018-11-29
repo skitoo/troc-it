@@ -1,15 +1,20 @@
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const staticPath = path.resolve(__dirname, '../trocit/static');
+const frontPath = path.resolve(__dirname, '../trocit/front');
 
 module.exports = {
   mode: 'development',
   resolve: {
     extensions: ['.js', '.vue'],
   },
-  entry: path.resolve(__dirname, '../trocit/front/index.js'),
+  entry: path.resolve(frontPath, 'index.js'),
   output: {
-    path: path.resolve(__dirname, '../trocit/static/js'),
+    path: staticPath,
     filename: 'bundle.js',
+    publicPath: '/static',
   },
   module: {
     rules: [
@@ -25,6 +30,14 @@ module.exports = {
         ],
       },
       {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+      {
         test: /\.js$/,
         use: 'babel-loader',
       },
@@ -37,5 +50,8 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+    }),
   ],
 };
