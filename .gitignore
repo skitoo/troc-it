@@ -4,4 +4,5 @@ __pycache__/
 
 node_modules/
 coverage
-trocit/static/js/bundle.js
+trocit/static/bundle.js
+trocit/static/style.css
