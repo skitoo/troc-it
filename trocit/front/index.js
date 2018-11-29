@@ -3,6 +3,8 @@ import VueI18n from 'vue-i18n';
 import App from './App';
 import messages from './locales';
 
+require('./styles/style.scss');
+
 Vue.use(VueI18n);
 
 const config = JSON.parse(document.getElementById('config').textContent);
