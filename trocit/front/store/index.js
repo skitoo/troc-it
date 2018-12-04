@@ -4,6 +4,9 @@ import getters from './getters';
 
 export default {
   state: {
+    ui: {
+      showLoginModal: false,
+    },
   },
   actions,
   mutations,
